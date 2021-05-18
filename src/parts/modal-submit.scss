@@ -1,0 +1,255 @@
+.modal--submit {
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  /**/
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  // background-color: hsl(0, 0%, 15%);
+  z-index: 12;
+  /**/
+  transition: opacity 0.2s ease-in-out;
+  height: 100%;
+  width: 100%;
+
+  &.active {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+    overflow-y: auto;
+
+    @media (min-width: 768px) {
+      overflow-y: initial;
+    }
+  }
+
+  @media (min-width: 768px) {
+    height: 90%;
+    width: 90%;
+  }
+
+}
+
+
+.modal__content {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transform: skewX(0);
+    background-color: hsl(0, 0%, 15%);
+    z-index: -1;
+
+    @media (min-width: 768px) {
+      transform: skewX(-5deg);
+    }
+  }
+}
+
+.modal__body {
+  flex: 1 0 50%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 24px 24px;
+
+  @media (min-width: 768px) {
+    padding: 48px 80px;
+  }
+}
+.modal__title {
+  margin: 0;
+  padding-bottom: 20px;
+  font-size: 32px;
+  text-transform: uppercase;
+  color: hsl(0, 0%, 100%);
+  max-width: 350px;
+
+  @media (min-width: 768px) {
+    font-size: 42px;
+  }
+}
+
+.modal__subtitle {
+  font-size: 14px;
+  color: hsl(0, 0%, 50%);
+  max-width: 350px;
+}
+
+.modal__form {
+  margin-top: 16px;
+
+  @media (min-width: 768px) {
+    margin-top: 32px;
+  }
+}
+
+.modal__form-item {
+  position: relative;
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.modal__form-input {
+  flex: 1 0 auto;
+  height: 70px;
+  width: 100%;
+  padding: 0 36px;
+  color: hsl(0, 0%, 100%);
+  font-size: 16px;
+  font-weight: bold;
+  background-color: hsl(0, 0%, 15%);
+  border: 1px solid hsl(0, 0%, 50%);
+
+  &:focus {
+    border-color: hsl(0, 0%, 100%);
+  }
+
+  &:focus ~ .modal__form-label {
+    top: 8px;
+    transform: translateY(0);
+    color: hsl(0, 0%, 50%);
+    font-size: 12px;
+  }
+
+  &:not(:placeholder-shown) ~ .modal__form-label {
+    top: 8px;
+    transform: translateY(0);
+    color: hsl(0, 0%, 50%);
+    font-size: 12px;
+  }
+
+  &:not(:placeholder-shown):invalid {
+    border-color: hsl(0, 50%, 50%);
+  }
+}
+
+.modal__form-label {
+  position: absolute;
+  top: 50%;
+  left: 36px;
+  color: hsl(0, 0%, 100%);
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transform: translateY(-50%);
+  transition: all 0.2s ease-in-out;
+}
+
+.modal__form-item--textarea {
+  height: 128px;
+}
+.modal__form-input--textarea {
+  height: 128px;
+  resize: none;
+  padding-top: 28px;
+
+
+  &[value=""] ~ .modal__form-label--textarea {
+  top: 32px;
+  transform: translateY(-50%);
+  color: hsl(0, 0%, 100%);
+  font-size: 16px;
+}
+
+  &:focus ~ .modal__form-label--textarea,
+  &[value]:not([value=""]) ~ .modal__form-label--textarea {
+  top: 8px;
+  transform: translateY(0);
+  color: hsl(0, 0%, 50%);
+  font-size: 12px;
+}
+
+&[value=""]:not(:placeholder-shown) ~ .modal__form-label--textarea {
+  top: 8px;
+  transform: translateY(0);
+  color: hsl(0, 0%, 50%);
+  font-size: 12px;
+}
+
+}
+
+.modal__form-label--textarea {
+  
+
+  &:placeholder-shown ~ .modal__form-label {
+    top: 32px;
+    transform: translateY(0);
+    color: hsl(0, 0%, 50%);
+    font-size: 12px;
+  }
+}
+
+.modal__form-submit-btn {
+  margin-top: 24px;
+  height: 60px;
+  width: 100%;
+  padding: 0 55px;
+
+  @media (min-width: 768px) {
+    width: auto;
+  }
+}
+
+.modal__decor {
+  position: relative;
+  flex: 1 0 50%;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 64px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: hsl(0, 0%, 10%);
+    transform: skewX(-5deg);
+  }
+
+  @media (min-width: 1280px) {
+    display: flex;
+  }
+}
+
+.modal__image {
+  object-fit: contain;
+  object-position: center;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+
+.close-modal {
+  position: absolute;
+  top: 40px;
+  right: 20px;
+  height: 48px;
+  padding: 22px;
+
+  @media (min-width: 768px) {
+    height: 70px;
+    padding: 22px 40px;
+  }
+}

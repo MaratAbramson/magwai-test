@@ -1,0 +1,68 @@
+<div class="modal modal--submit">
+  <div class="modal__content">
+
+    <div class="modal__decor">
+      <img src="img/moon.png" alt="moon" class="modal__image">
+    </div>
+
+    <div class="modal__body">
+      <h2 class="modal__title">
+        Оставьте заявку
+      </h2>
+      <p class="modal__subtitle">
+        Оставьте заявку и наш менеджер свяжется с вами в течение 10 -15 минут
+      </p>
+      <form action="" class="modal__form">
+
+        <div class="modal__form-item">
+            <input type="text" class="modal__form-input" id="submit-name" name="submit_name" placeholder="&nbsp;"
+              required minlength="2" pattern="[A-Za-zА-Яа-яЁё]{2,}">
+            <label for="submit-name" class="modal__form-label">
+              Ваше имя*
+            </label>
+        </div>
+
+        <div class="modal__form-item">
+            <input type="email" class="modal__form-input" id="submit-email" name="submit_email" placeholder="&nbsp;"
+              required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+            <label for="submit-email" class="modal__form-label">
+              E-Mail*
+            </label>
+        </div>
+
+        <div class="modal__form-item">
+            <input type="tel" class="modal__form-input" id="submit-phone" data-tel-input name="submit_phone" placeholder="&nbsp;" maxlength="18">
+            <label for="submit-phone" class="modal__form-label">
+              +7(___)
+            </label>
+        </div>
+
+        <div class="modal__form-item modal__form-item--textarea">
+            <textarea class="modal__form-input modal__form-input--textarea" id="submit-message" name="submit_message" required value="" placeholder="&nbsp;" minlength="2"></textarea>
+            <label for="submit-message" class="modal__form-label modal__form-label--textarea">
+              Ваш вопрос*
+            </label>
+        </div>
+
+        <div class="modal__form-submit">
+          <button class="modal__form-submit-btn c-btn c-btn--flat-accent">
+            <span class="c-btn__label">
+              ОТПРАВИТЬ ЗАЯВКУ
+            </span>
+          </button>
+        </div>
+
+      </form>
+    </div>
+
+    <button class="close-modal c-btn c-btn--outline-base">
+      <span class="c-btn__icon">
+        <svg class="e-icon" height="24" width="24" viewBox="0 0 33 32">
+          <use xlink:href="/img/icons/ant-design_close-outlined.svg#icon-modal-close">
+          </use>
+        </svg>
+      </span>
+    </button>
+
+  </div>
+</div>

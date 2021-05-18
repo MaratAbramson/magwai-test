@@ -1,0 +1,129 @@
+.site-header {
+  height: 100vh;
+  flex: 0 0 auto;
+  /*-display: flex;-*/
+  display: flex;
+  /*-flex-direction: column;-*/
+  flex-direction: column;
+  /*-align-items: center;-*/
+  align-items: center;
+  width: 100%;
+}
+
+.site-header__content {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  @media (min-width: 768px) {
+    padding-top: 28px;
+    padding-bottom: 28px;
+  }
+}
+
+.site-header__mainbar,
+.site-header__navbar,
+.site-header__menu,
+.site-header__logo {
+  display: flex;
+  align-items: center;
+}
+
+.site-header__mainbar {
+  width: 100%;
+  justify-content: space-between;
+  @media (min-width: 768px) {
+    width: auto;
+  }
+}
+
+.site-header__logo {
+  z-index: 10;
+}
+.site-header_logo-img {
+  height: 32px;
+
+  @media (min-width: 768px) {
+    height: 48px;
+  }
+}
+
+.site-header__navbar {
+  display: none;
+  justify-content: space-between;
+  width: auto;
+
+
+  @media (min-width: 768px) {
+    display: flex;
+    height: 60px;
+  }
+
+  @media (min-width: 1600px) {
+    width: 100%;
+  }
+}
+
+.site-header__menu {
+  display: none;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  min-width: 1px;
+
+  @media (min-width: 1600px) {
+    display: flex;
+  }
+
+  @media (min-width: 1920px) {
+    padding: 0 55px;
+  }
+}
+
+.site-header__menu-item {
+  display: inline-flex;
+  min-width: 100px;
+}
+
+.site-header__menu-link {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-radius: 6px;
+  padding-top: 0.75em;
+  padding-bottom: 0.75em;
+
+  &:hover {
+    background: linear-gradient(0.35turn, hsla(0, 0%, 100%, 0.25) 0%, hsla(0, 0%, 100%, 0) 100%);
+    border-top: 1px solid hsla(0, 0%, 100%, 0.15);
+    border-left: 1px solid hsla(0, 0%, 100%, 0.15);
+  }
+}
+
+.site-header__toolbar {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  margin-right: 20px;
+  list-style: none;
+  z-index: 10;
+}
+
+.site-header__toolbar-item {}
+
+.site-header__toolbar-link {
+  height: 60px;
+  margin: 0 24px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.site-header__toolbar-btn {
+  height: 60px;
+  padding-left: 5em;
+  padding-right: 5em;
+}

@@ -1,0 +1,30 @@
+<article class="cards-item" v-for="item in posts">
+  <div class="card__content">
+    <div class="card__picture">
+      <img v-bind:src="imageBaseUrl + item.id" alt="card image crypto-money" class="card__image">
+    </div>
+    <div class="card__body">
+      <span class="card__bage">
+        badge {{ item.id }}
+      </span>
+      <h3 class="card__title">
+        {{ item.title }}
+      </h3>
+      <p class="card__desc">
+        {{ item.body }}
+      </p>
+      <div class="card__meta">
+        <span class="card__meta-author">
+          Posted by <b>{{ item.userId }}</b>
+        </span>
+        <span class="card__meta-date">
+          on <b>{{ item.id }}.05.2021</b>
+        </span>
+
+      </div>
+      <button class="card__btn c-btn c-btn--flat-base">
+        Continue reading
+      </button>
+    </div>
+  </div>
+</article>

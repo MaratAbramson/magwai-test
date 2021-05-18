@@ -1,0 +1,20 @@
+<div class="site-content__section u-container">
+  <h2 class="site-content__title">
+    Карточки
+  </h2>
+  <div class="cards" id="cards">
+
+    @@include('card.html')
+
+    <div class="cards__control">
+      <button class="cards-btn c-btn c-btn--flat-accent" @click="getMoreCards(event)">
+        <span class="c-btn__label">
+          ЗАГРУЗИТЬ ЕЩЕ
+        </span>
+      </button>
+    </div>
+
+  </div>
+
+
+</div>
